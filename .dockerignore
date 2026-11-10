@@ -1,0 +1,6 @@
+.git
+uploads
+**/node_modules
+**/.env
+server/dist
+prototype

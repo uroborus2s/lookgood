@@ -1,0 +1,27 @@
+<view wx:if="{{loading}}" class="loading">正在读取会员状态…</view>
+<view wx:elif="{{error}}" class="card">
+  <view class="err">{{error}}</view>
+  <button class="btn" bindtap="load">重试</button>
+</view>
+<block wx:else>
+  <view class="card">
+    <view class="h">{{active ? levelTitle + '生效中' : '当前是免费档'}}</view>
+    <view wx:if="{{active}}">有效期至 {{expireText}}</view>
+    <view class="quota">今日生成 {{used}}/{{limit}} 次，还剩 {{remaining}} 次</view>
+    <view class="tip">次数按北京时间每天 0 点重置。免费档和会员档的额度都可以在服务端配置。</view>
+  </view>
+  <view class="card plan" wx:for="{{plans}}" wx:key="sku">
+    <view class="row">
+      <view>
+        <view class="h">{{item.title}}</view>
+        <view class="sub">{{item.days}} 天 · 每日 {{memberQuota}} 次生成</view>
+      </view>
+      <view class="price">￥{{item.amountYuan}}</view>
+    </view>
+    <button class="btn" data-sku="{{item.sku}}" bindtap="buy" loading="{{buying===item.sku}}" disabled="{{!!buying}}">开通{{item.title}}</button>
+  </view>
+  <view class="card">
+    <view>人脸照片只在你授权后使用，原图 24 小时内删除。</view>
+    <button bindtap="revoke">撤回人脸授权并删除照片</button>
+  </view>
+</block>

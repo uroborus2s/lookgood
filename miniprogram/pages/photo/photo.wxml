@@ -1,0 +1,4 @@
+<view class="card"><view>全身照：正面站立、光线均匀</view><image wx:if="{{body}}" src="{{body}}" mode="aspectFit" style="height:400rpx"/><button bindtap="pick" data-k="body" loading="{{uploading==='body'}}" disabled="{{!!uploading}}">上传全身照</button></view>
+<view class="card"><view>素颜自拍：自然光、正脸、无遮挡</view><image wx:if="{{face}}" src="{{face}}" mode="aspectFit" style="height:300rpx"/><button bindtap="pick" data-k="face" loading="{{uploading==='face'}}" disabled="{{!!uploading}}">上传自拍</button></view>
+<view class="tip">原图仅用于本次分析，24 小时后自动删除</view>
+<button class="btn" disabled="{{!body||!face||!!uploading}}" bindtap="next">开始分析</button>

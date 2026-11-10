@@ -1,0 +1,4 @@
+<view class="card"><image wx:if="{{img}}" src="{{img}}" mode="widthFix"/><view wx:if="{{status}}" class="loading">{{status}}</view><view class="ai">AI 生成</view></view>
+<view class="card"><view wx:for="{{colors}}" wx:key="hex" bindtap="pick" data-hex="{{item.hex}}" class="tag {{current===item.hex?'on':''}}"><text style="color:{{item.hex}}">●</text> {{item.name}}</view></view>
+<view class="card" wx:for="{{avoid}}" wx:key="hex">避开：{{item.name}} — {{item.why}}</view>
+<button bindtap="fav" disabled="{{!img}}">收藏这个唇色</button>

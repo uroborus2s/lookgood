@@ -1,0 +1,5 @@
+<view class="card"><view style="font-weight:bold">{{spec.hair.style}}</view><view>{{spec.hair.why}}</view>
+<view wx:for="{{spec.hair.accessories}}" wx:key="name"><text style="color:{{item.color_hex}}">●</text> {{item.name}}</view></view>
+<view class="card" wx:if="{{img||status}}"><image wx:if="{{img}}" src="{{img}}" mode="widthFix"/><view wx:else class="loading">{{status}}</view><view class="ai">AI 生成</view></view>
+<button class="btn" bindtap="preview" loading="{{!!status}}" disabled="{{!!status}}">看看这个发型的效果</button>
+<button bindtap="fav" disabled="{{!img}}">收藏这个发型</button>

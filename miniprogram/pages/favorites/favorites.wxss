@@ -1,0 +1,7 @@
+.h { font-weight: 600; font-size: 32rpx; }
+.empty { color: #666; line-height: 1.6; }
+.fav { display: flex; align-items: center; gap: 20rpx; }
+.cover { width: 140rpx; height: 180rpx; border-radius: 16rpx; background: #f6efe9; flex: none; }
+.body { flex: 1; min-width: 0; }
+.sub { margin-top: 8rpx; color: #999; font-size: 24rpx; }
+.ghost { margin: 0; background: #fff; color: #D9735F; border: 1rpx solid #D9735F; }

@@ -1,0 +1,6 @@
+.h { font-weight: 600; font-size: 34rpx; }
+.quota { margin-top: 12rpx; }
+.plan { display: flex; flex-direction: column; gap: 20rpx; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 16rpx; }
+.sub { margin-top: 8rpx; color: #999; font-size: 24rpx; }
+.price { font-size: 40rpx; font-weight: 600; color: #D9735F; }

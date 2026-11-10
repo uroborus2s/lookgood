@@ -1,0 +1,10 @@
+node_modules/
+dist/
+server/dist/
+.env
+server/.env
+*.log
+.DS_Store
+uploads/
+.s/
+.serverless/

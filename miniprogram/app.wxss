@@ -1,0 +1,5 @@
+page{background:#FFF7F3;color:#333;font-size:28rpx}.card{background:#fff;border-radius:24rpx;margin:24rpx;padding:32rpx}.btn{background:#D9735F;color:#fff;border-radius:48rpx}.tag{display:inline-block;padding:8rpx 20rpx;border-radius:32rpx;background:#FBE7DF;margin:8rpx}.ai{font-size:20rpx;color:#999}
+.loading { padding: 80rpx 0; text-align: center; color: #999; }
+.err { padding: 40rpx 0; text-align: center; color: #c0392b; }
+.tip { margin: 16rpx 32rpx; font-size: 24rpx; color: #999; }
+.tag.on { border: 2rpx solid #333; }

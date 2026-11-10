@@ -1,0 +1,4 @@
+<scroll-view scroll-y style="height:80vh" scroll-into-view="m{{msgs.length-1}}">
+<view wx:for="{{msgs}}" wx:key="index" id="m{{index}}" class="card" style="{{item.role==='user'?'background:#FBE7DF;margin-left:120rpx':'margin-right:120rpx'}}">{{item.text}}</view><view wx:if="{{typing}}" class="card" style="margin-right:120rpx;color:#999">小好正在输入…</view></scroll-view>
+<view><text class="tag" wx:for="{{quick}}" wx:key="*this" bindtap="tapQuick" data-t="{{item}}">{{item}}</text></view>
+<view style="display:flex"><input style="flex:1" value="{{input}}" bindinput="onInput" placeholder="说说你的需求"/><button size="mini" class="btn" bindtap="send" disabled="{{typing}}">发送</button></view>

@@ -1,0 +1,30 @@
+{
+  "name": "yishen-haokan-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "build": "tsc -p tsconfig.build.json && mkdir -p dist/prompts && cp src/prompts/system.md dist/prompts/system.md",
+    "test": "vitest run",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "dependencies": {
+    "ali-oss": "^6.23.0",
+    "dotenv": "^18.0.9",
+    "fastify": "^5.12.8",
+    "openai": "^4.104.0",
+    "pg": "^8.23.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/ali-oss": "^6.23.4",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "pg-mem": "^3.0.14",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}

@@ -1,0 +1,47 @@
+# 阿里云函数计算 FC 3.0。只描述部署，不在仓库里执行。
+# 用法见 docs/deploy.zh.md。密钥放到函数环境变量，不要写进这个文件。
+edition: 3.0.0
+name: yishen-haokan
+access: default
+
+vars:
+  region: cn-beijing
+
+resources:
+  yishen-api:
+    component: fc3
+    props:
+      region: ${vars.region}
+      functionName: yishen-haokan-api
+      description: 一身好看 API（HTTP 触发器 + Fastify inject）
+      runtime: nodejs20
+      handler: dist/fc.handler
+      cpu: 0.5
+      memorySize: 512
+      diskSize: 512
+      timeout: 60
+      instanceConcurrency: 20
+      internetAccess: true
+      code: ./server
+      environmentVariables:
+        NODE_ENV: production
+        PROVIDER_MODE: live
+        REPO: pg
+        CONTENT_SAFETY: wechat
+        FREE_DAILY_QUOTA: "5"
+        MEMBER_DAILY_QUOTA: "100"
+      triggers:
+        - triggerName: http
+          triggerType: http
+          description: 小程序 API、支付回调、内容安全回调
+          qualifier: LATEST
+          triggerConfig:
+            authType: anonymous
+            disableURLInternet: false
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - HEAD
+              - OPTIONS

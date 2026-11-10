@@ -1,0 +1,4 @@
+<view class="card"><view style="font-weight:bold">人脸信息单独授权</view>
+<view>我们将使用你上传的照片分析体型、肤色和脸型，并生成试穿/试妆效果图。原图 24 小时内自动删除，你可以随时撤回授权。</view>
+<checkbox-group bindchange="onCheck"><checkbox value="face">我已阅读并同意《人脸信息处理规则》</checkbox><checkbox value="age">我已年满 14 周岁</checkbox></checkbox-group></view>
+<button class="btn" disabled="{{!ok}}" bindtap="agree">同意并继续</button><button bindtap="skip">不上传照片，只聊天</button>

@@ -1,0 +1,4 @@
+<view class="card" wx:if="{{loading}}">正在分析体型、肤色和脸型…</view>
+<view class="card" wx:else><view>体型：{{d.body_type}}</view><view>冷暖：{{d.undertone}} · 四季型：{{d.season}}</view><view>脸型：{{d.face_shape}}</view>
+<view wx:for="{{d.reasons}}" wx:key="*this" class="ai">· {{item}}</view><view class="ai">判断不准？点击可修改</view></view>
+<button class="btn" disabled="{{loading}}" bindtap="next">看我的方案</button>

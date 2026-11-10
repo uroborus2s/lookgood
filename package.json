@@ -1,0 +1,1 @@
+{"name":"yishen-haokan-miniprogram","private":true,"scripts":{"typecheck":"tsc -p tsconfig.json --noEmit"},"devDependencies":{"miniprogram-api-typings":"^5.2.3","typescript":"^7.0.2"}}

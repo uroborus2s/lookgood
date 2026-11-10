@@ -1,0 +1,22 @@
+<view wx:if="{{loading && !list.length}}" class="loading">正在打开收藏…</view>
+<view wx:elif="{{error && !list.length}}" class="card">
+  <view class="err">{{error}}</view>
+  <button class="btn" bindtap="reload">重试</button>
+</view>
+<view wx:elif="{{!list.length}}" class="card empty">
+  <view class="h">还没有收藏</view>
+  <view>试穿、唇色、发型或整体造型生成后，点「收藏」就会出现在这里。方案页也可以收藏整套搭配。</view>
+</view>
+<view wx:else>
+  <view class="card fav" wx:for="{{list}}" wx:key="id">
+    <image wx:if="{{item.coverUrl}}" class="cover" src="{{item.coverUrl}}" mode="aspectFill"/>
+    <view class="body">
+      <view class="h">{{item.title}}</view>
+      <view class="sub">{{item.kindLabel}} · {{item.time}}</view>
+      <view class="ai">AI 生成</view>
+    </view>
+    <button class="ghost" size="mini" data-id="{{item.id}}" bindtap="remove">删除</button>
+  </view>
+  <view wx:if="{{loadingMore}}" class="tip">加载更多…</view>
+  <view wx:elif="{{list.length && !nextCursor}}" class="tip">没有更多了</view>
+</view>

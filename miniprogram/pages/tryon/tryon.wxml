@@ -1,0 +1,8 @@
+<view class="card">
+  <image wx:if="{{img}}" src="{{img}}" mode="widthFix"/>
+  <view wx:elif="{{status}}" class="loading">{{status}}</view>
+  <view wx:elif="{{error}}" class="err">{{error}}</view>
+  <view class="ai">AI 生成</view>
+</view>
+<button bindtap="addGarment" disabled="{{!!status}}">上传单品图试穿</button>
+<button bindtap="fav" disabled="{{!img}}">收藏</button>

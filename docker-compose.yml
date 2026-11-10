@@ -1,0 +1,17 @@
+# 本地开发用 PostgreSQL：docker compose up -d
+# 然后 server/.env 设置 REPO=pg DATABASE_URL=postgres://yishen:yishen@127.0.0.1:5432/yishen
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: yishen
+      POSTGRES_PASSWORD: yishen
+      POSTGRES_DB: yishen
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U yishen"]
+      interval: 5s
+      retries: 10
+volumes:
+  pgdata:

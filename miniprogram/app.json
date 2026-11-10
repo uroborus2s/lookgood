@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/consent/consent",
+    "pages/chat/chat",
+    "pages/photo/photo",
+    "pages/analysis/analysis",
+    "pages/plans/plans",
+    "pages/tryon/tryon",
+    "pages/lip/lip",
+    "pages/makeup/makeup",
+    "pages/hair/hair",
+    "pages/fulllook/fulllook",
+    "pages/favorites/favorites",
+    "pages/member/member"
+  ],
+  "window": {
+    "navigationBarTitleText": "一身好看",
+    "navigationBarBackgroundColor": "#FFF7F3",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#D9735F",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "顾问"
+      },
+      {
+        "pagePath": "pages/favorites/favorites",
+        "text": "收藏"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

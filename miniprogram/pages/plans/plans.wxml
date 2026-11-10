@@ -1,0 +1,5 @@
+<view class="card" wx:if="{{spec}}"><view style="font-weight:bold">{{spec.occasion}} 方案</view><view>{{spec.outfit.why}}</view>
+<view wx:for="{{spec.outfit.items}}" wx:key="name"><text style="color:{{item.color_hex}}">●</text> {{item.name}} — {{item.why}}</view></view>
+<view class="card" wx:if="{{spec}}"><view>唇色：<text style="color:{{spec.lip.primary.hex}}">●</text> {{spec.lip.primary.name}}</view><view>发型：{{spec.hair.style}}</view></view>
+<view><button bindtap="go" data-p="tryon">试穿</button><button bindtap="go" data-p="lip">试唇色</button><button bindtap="go" data-p="makeup">妆容</button><button bindtap="go" data-p="hair">发型</button><button class="btn" bindtap="go" data-p="fulllook">整体造型</button></view>
+<button wx:if="{{spec}}" bindtap="fav">收藏这套方案</button>

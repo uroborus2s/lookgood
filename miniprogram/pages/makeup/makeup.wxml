@@ -1,0 +1,2 @@
+<view class="card"><view>{{spec.makeup.minutes}} 分钟 · {{spec.makeup.level}}</view>
+<view wx:for="{{spec.makeup.steps}}" wx:key="area"><text>{{index+1}}. {{item.area}}：{{item.how}}</text><text wx:if="{{item.color_hex}}" style="color:{{item.color_hex}}"> ●</text></view></view>
